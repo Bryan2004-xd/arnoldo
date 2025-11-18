@@ -1,0 +1,1540 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOVA - Especialistas en Redes y Tecnología</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- AOS Library for Animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-dark: #1d4ed8;
+            --primary-light: #3b82f6;
+            --secondary-color: #64748b;
+            --accent-color: #f59e0b;
+            --dark-color: #1e293b;
+            --light-color: #f8fafc;
+            --text-color: #334155;
+            --white: #ffffff;
+            --gray-light: #f1f5f9;
+            --shadow: 0 10px 25px rgba(0,0,0,0.1);
+            --shadow-lg: 0 20px 40px rgba(0,0,0,0.15);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --border-radius: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            color: var(--text-color);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        /* Header Superior */
+        .top-header {
+            background: var(--white);
+            border-bottom: 1px solid #e2e8f0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 0.75rem 0;
+        }
+
+        .logo {
+            font-size: 2.2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .logo-subtitle {
+            font-size: 0.85rem;
+            color: var(--secondary-color);
+            font-weight: 500;
+        }
+
+        .search-bar .form-control {
+            border-radius: 25px 0 0 25px;
+            border: 2px solid #e2e8f0;
+            padding: 0.75rem 1.5rem;
+            transition: var(--transition);
+        }
+
+        .search-bar .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.2rem rgba(37, 99, 235, 0.1);
+        }
+
+        .search-bar .btn {
+            border-radius: 0 25px 25px 0;
+            border: 2px solid var(--primary-color);
+            background: var(--primary-color);
+            padding: 0.75rem 1.5rem;
+            transition: var(--transition);
+        }
+
+        .search-bar .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-1px);
+        }
+
+        .user-section a {
+            color: var(--dark-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+        }
+
+        .user-section a:hover {
+            color: var(--primary-color);
+            background: var(--gray-light);
+        }
+
+        /* Navegación Principal */
+        .main-nav {
+            background: var(--white);
+            box-shadow: var(--shadow);
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-link {
+            color: var(--dark-color) !important;
+            font-weight: 600;
+            padding: 1.2rem 1.5rem !important;
+            transition: var(--transition);
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+            position: relative;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--primary-color) !important;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 3px;
+            background: var(--primary-color);
+            transition: var(--transition);
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 80%;
+        }
+
+        /* Hero Section */
+        .hero-main {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-main::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(37, 99, 235, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(245, 158, 11, 0.05) 0%, transparent 50%);
+        }
+
+        .min-vh-80 {
+            min-height: 80vh;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            color: #cbd5e1;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            color: #94a3b8;
+            line-height: 1.8;
+        }
+
+        .hero-buttons .btn {
+            padding: 1rem 2rem;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-buttons .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            border: none;
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+        }
+
+        .hero-buttons .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(37, 99, 235, 0.4);
+        }
+
+        .hero-buttons .btn-outline-primary {
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            background: transparent;
+        }
+
+        .hero-buttons .btn-outline-primary:hover {
+            background: var(--primary-color);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        /* Floating Cards */
+        .floating-cards {
+            position: relative;
+            height: 400px;
+        }
+
+        .card-floating {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            color: white;
+            transition: var(--transition);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .card-floating i {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .card-floating span {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .card-1 {
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+        }
+
+        .card-2 {
+            top: 60%;
+            left: 70%;
+            animation-delay: 1.5s;
+            background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+        }
+
+        .card-3 {
+            top: 30%;
+            left: 60%;
+            animation-delay: 3s;
+            background: linear-gradient(135deg, #10b981, #059669);
+        }
+
+        .card-4 {
+            top: 70%;
+            left: 20%;
+            animation-delay: 4.5s;
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+        }
+
+        .card-floating:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-10px) scale(1.05);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Especialidades NOVA */
+        .specialties-section {
+            background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+            margin-bottom: 3rem;
+        }
+
+        .specialty-card {
+            background: var(--white);
+            padding: 2.5rem 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+            height: 100%;
+            border: 1px solid #f1f5f9;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .specialty-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+        }
+
+        .specialty-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .specialty-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            transition: var(--transition);
+        }
+
+        .specialty-card:hover .specialty-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .specialty-icon i {
+            font-size: 2rem;
+            color: var(--white);
+        }
+
+        .specialty-card h4 {
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+
+        .specialty-card p {
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .specialty-features {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .specialty-features li {
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .specialty-features i {
+            color: #10b981;
+            margin-right: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .specialty-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .specialty-link:hover {
+            color: var(--primary-dark);
+            transform: translateX(5px);
+        }
+
+        /* Product Cards */
+        .featured-products {
+            background: var(--white);
+        }
+
+        .category-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            margin: 0;
+        }
+
+        .category-subtitle {
+            color: var(--secondary-color);
+            margin-bottom: 0;
+            font-size: 1rem;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            overflow: hidden;
+            border: 1px solid #f1f5f9;
+            position: relative;
+            height: 100%;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            z-index: 2;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            background: var(--accent-color);
+            color: var(--white);
+        }
+
+        .product-badge[class*="Recomendado"] {
+            background: #10b981;
+        }
+
+        .product-badge[class*="Oferta"] {
+            background: #ef4444;
+        }
+
+        .product-badge[class*="Nuevo"] {
+            background: var(--primary-color);
+        }
+
+        .product-badge[class*="Popular"] {
+            background: #8b5cf6;
+        }
+
+        .product-image {
+            position: relative;
+            overflow: hidden;
+            height: 200px;
+            background: var(--gray-light);
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.1);
+        }
+
+        .product-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(30, 41, 59, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .product-card:hover .product-overlay {
+            opacity: 1;
+        }
+
+        .quick-view {
+            transform: translateY(20px);
+            transition: var(--transition);
+        }
+
+        .product-card:hover .quick-view {
+            transform: translateY(0);
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-name {
+            color: var(--dark-color);
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+            height: 2.8em;
+            overflow: hidden;
+            display: -webkit-box;
+            
+            -webkit-box-orient: vertical;
+        }
+
+        .product-rating {
+            color: #f59e0b;
+            font-size: 0.9rem;
+        }
+
+        .rating-text {
+            color: var(--secondary-color);
+            font-size: 0.8rem;
+            margin-left: 0.5rem;
+        }
+
+        .product-price {
+            color: #059669;
+            font-weight: 700;
+            font-size: 1.3rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .product-code {
+            color: var(--secondary-color);
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+
+        .product-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+
+        .cta-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .cta-text {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 0;
+        }
+
+        .cta-section .btn-light {
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--primary-color);
+            font-weight: 600;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            transition: var(--transition);
+        }
+
+        .cta-section .btn-light:hover {
+            background: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark-color);
+            color: var(--white);
+        }
+
+        .footer-logo .logo {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-text {
+            color: #cbd5e1;
+            margin: 1rem 0;
+        }
+
+        .footer h5 {
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-light);
+            padding-left: 5px;
+        }
+
+        .contact-info p {
+            color: #cbd5e1;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            border-radius: 50%;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        .footer-links-inline {
+            display: flex;
+            gap: 2rem;
+            justify-content: flex-end;
+        }
+
+        .footer-links-inline a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .footer-links-inline a:hover {
+            color: var(--primary-light);
+        }
+
+        /* Animaciones adicionales */
+        .animate-fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+        
+        .animate-slide-up {
+            animation: slideUp 0.8s ease-out;
+        }
+        
+        .animate-bounce {
+            animation: bounce 2s infinite;
+        }
+        
+        .animate-pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Mejoras para los modales */
+        .modal-content {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .modal-header {
+            border-bottom: 1px solid #e9ecef;
+            padding: 1.5rem;
+        }
+
+        .modal-body {
+            padding: 2rem;
+        }
+
+        .modal-title {
+            font-weight: 700;
+            color: var(--dark-color);
+        }
+
+        .price-highlight {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #059669;
+        }
+
+        .modal-product-image {
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.5rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-buttons {
+                text-align: center;
+            }
+            
+            .hero-buttons .btn {
+                display: block;
+                width: 100%;
+                margin-bottom: 1rem;
+            }
+            
+            .floating-cards {
+                height: 300px;
+                margin-top: 2rem;
+            }
+            
+            .card-floating {
+                padding: 1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .footer-links-inline {
+                justify-content: center;
+                margin-top: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Superior -->
+    <header class="top-header py-2">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-4">
+                    <div class="logo-section d-flex align-items-center">
+                        <div class="logo me-2">NOVA</div>
+                        <span class="logo-subtitle">Especialistas en Redes</span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="search-bar">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Buscar routers, switches, AP...">
+                            <button class="btn btn-primary" type="button">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 text-end">
+    <div class="user-section">
+        <a href="mi-cuenta.html" class="user-link me-3">
+            <i class="fas fa-user me-1"></i>Mi cuenta
+        </a>
+        <a href="carrito.html" class="cart-link">
+            <i class="fas fa-shopping-cart me-1"></i>Carrito: C$<span id="cartTotal">0.00</span>
+        </a>
+    </div>
+</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navegación Principal -->
+    <nav class="main-nav navbar navbar-expand-lg">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav w-100 justify-content-between">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">INICIO</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tienda.html">TIENDA</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contactanos.html">CONTACTANOS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">POLÍTICAS</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section Mejorado -->
+    <section class="hero-main">
+        <div class="container">
+            <div class="row align-items-center min-vh-80">
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <h1 class="hero-title animate-fade-in" data-aos="fade-right" data-aos-duration="1000">
+                            ESPECIALISTAS EN<br>
+                            <span class="text-primary">REDES Y TECNOLOGÍA</span>
+                        </h1>
+                        <p class="hero-subtitle animate-slide-up" data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000">
+                            Tu proveedor confiable de equipos de networking y computación. 
+                            Calidad garantizada en routers, switches, access points y laptops empresariales.
+                        </p>
+                        <p class="hero-description animate-slide-up" data-aos="fade-right" data-aos-delay="400" data-aos-duration="1000">
+                            ¿Necesitas equipos para tu red empresarial o proyecto tecnológico? 
+                            Te asesoramos para encontrar la solución perfecta.
+                        </p>
+                        <div class="hero-buttons animate-bounce" data-aos="fade-up" data-aos-delay="600" data-aos-duration="1000">
+                            <a href="contactanos.html" class="btn btn-primary btn-lg me-3">
+                                <i class="fas fa-headset me-2"></i>CONSULTAR ESPECIALISTA
+                            </a>
+                            <a href="tienda.html" class="btn btn-outline-primary btn-lg">
+                                <i class="fas fa-boxes me-2"></i>VER PRODUCTOS
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-visual animate-fade-in" data-aos="fade-left" data-aos-duration="1000">
+                        <div class="floating-cards">
+                            <div class="card-floating card-1">
+                                <i class="fas fa-router"></i>
+                                <span>Routers</span>
+                            </div>
+                            <div class="card-floating card-2">
+                                <i class="fas fa-network-wired"></i>
+                                <span>Switches</span>
+                            </div>
+                            <div class="card-floating card-3">
+                                <i class="fas fa-wifi"></i>
+                                <span>Access Points</span>
+                            </div>
+                            <div class="card-floating card-4">
+                                <i class="fas fa-laptop"></i>
+                                <span>Laptops</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Especialidades NOVA Mejoradas -->
+    <section class="specialties-section py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title" data-aos="fade-up" data-aos-duration="1000">Nuestras Especialidades</h2>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">Enfocados en lo que mejor hacemos: equipos de networking y tecnología</p>
+            </div>
+            <div class="row g-4">
+                <!-- Routers -->
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1000">
+                    <div class="specialty-card animate-slide-up">
+                        <div class="specialty-icon">
+                            <i class="fas fa-router"></i>
+                        </div>
+                        <h4>Routers</h4>
+                        <p>Equipos de enrutamiento profesional para empresas de todos los tamaños</p>
+                        <ul class="specialty-features">
+                            <li><i class="fas fa-check"></i> WiFi 6 y 6E</li>
+                            <li><i class="fas fa-check"></i> Gestión empresarial</li>
+                            <li><i class="fas fa-check"></i> Multi-usuario</li>
+                        </ul>
+                        <a href="tienda.html" class="specialty-link">Ver Routers <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Switches -->
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+                    <div class="specialty-card animate-slide-up">
+                        <div class="specialty-icon">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <h4>Switches</h4>
+                        <p>Conmutadores gestionables y no gestionables para tu infraestructura</p>
+                        <ul class="specialty-features">
+                            <li><i class="fas fa-check"></i> PoE y PoE+</li>
+                            <li><i class="fas fa-check"></i> 24/48 puertos</li>
+                            <li><i class="fas fa-check"></i> Layer 2 y 3</li>
+                        </ul>
+                        <a href="tienda.html" class="specialty-link">Ver Switches <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Access Points -->
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+                    <div class="specialty-card animate-slide-up">
+                        <div class="specialty-icon">
+                            <i class="fas fa-wifi"></i>
+                        </div>
+                        <h4>Access Points</h4>
+                        <p>Puntos de acceso WiFi para cobertura interior y exterior</p>
+                        <ul class="specialty-features">
+                            <li><i class="fas fa-check"></i> Indoor/Outdoor</li>
+                            <li><i class="fas fa-check"></i> Mesh Networking</li>
+                            <li><i class="fas fa-check"></i> Controller-based</li>
+                        </ul>
+                        <a href="tienda.html" class="specialty-link">Ver AP <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Laptops -->
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
+                    <div class="specialty-card animate-slide-up">
+                        <div class="specialty-icon">
+                            <i class="fas fa-laptop"></i>
+                        </div>
+                        <h4>Laptops</h4>
+                        <p>Computadoras portátiles empresariales de alto rendimiento</p>
+                        <ul class="specialty-features">
+                            <li><i class="fas fa-check"></i> Empresariales</li>
+                            <li><i class="fas fa-check"></i> Alto rendimiento</li>
+                            <li><i class="fas fa-check"></i> Garantía extendida</li>
+                        </ul>
+                        <a href="tienda.html" class="specialty-link">Ver Laptops <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Productos Destacados Mejorados -->
+    <section class="featured-products py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title" data-aos="fade-up" data-aos-duration="1000">Productos Destacados</h2>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">Lo más vendido en tecnología empresarial</p>
+            </div>
+
+            <!-- Routers Destacados -->
+            <div class="category-section mb-5">
+                <div class="category-header d-flex justify-content-between align-items-center mb-4">
+                    <div>
+                        <h3 class="category-title" data-aos="fade-right" data-aos-duration="1000">Routers Destacados</h3>
+                        <p class="category-subtitle" data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000">Equipos de enrutamiento Certificados</p>
+                    </div>
+                    <a href="tienda.html" class="btn btn-outline-primary" data-aos="fade-left" data-aos-duration="1000">Ver Todos los Routers</a>
+                </div>
+                <div class="row g-4">
+                    <!-- Router 1 -->
+                    <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1000">
+                        <div class="product-card animate-fade-in">
+                            <div class="product-badge">Más Vendido</div>
+                            <div class="product-image">
+                                <img src="../fotos/routers/Fortinet FortiGate 40F.jpg" class="img-fluid" alt="Router X1800">
+                                <div class="product-overlay">
+                                    <button class="btn btn-primary quick-view">
+                                        <i class="fas fa-eye me-2"></i>Vista Rápida
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-info p-3">
+                                <h5 class="product-name">Fortinet FortiGate 40FT</h5>
+                                <div class="product-rating mb-2">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span class="rating-text">(4.0)</span>
+                                </div>
+                                <p class="product-price">C$10,000 <small>+IVA</small></p>
+                                <p class="product-code">Código: 8505</p>
+                                <div class="product-actions">
+                                    
+                                    </button>
+                                    <button class="btn btn-primary btn-sm">
+                                        <i class="fas fa-cart-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Router 2 -->
+                    <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+                        <div class="product-card animate-fade-in">
+                            <div class="product-badge">Nuevo</div>
+                            <div class="product-image">
+                                <img src="../fotos/routers/TP-Link ER605.jpg" class="img-fluid" alt="Router MX4200">
+                                <div class="product-overlay">
+                                    <button class="btn btn-primary quick-view">
+                                        <i class="fas fa-eye me-2"></i>Vista Rápida
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-info p-3">
+                                <h5 class="product-name">Router TP-Link ER605</h5>
+                                <div class="product-rating mb-2">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span class="rating-text">(4.0)</span>
+                                </div>
+                                <p class="product-price">C$4,800. <small>+IVA</small></p>
+                                <p class="product-code">Código: 4175</p>
+                                <div class="product-actions">
+                                    
+                                    <button class="btn btn-primary btn-sm">
+                                        <i class="fas fa-cart-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Router 3 -->
+                    <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+                        <div class="product-card animate-fade-in">
+                            <div class="product-badge">Descuento</div>
+                            <div class="product-image">
+                                <img src="../fotos/routers/Mikrotik hEX RB750Gr3.jpg" class="img-fluid" alt="Router MX2001">
+                                <div class="product-overlay">
+                                    <button class="btn btn-primary quick-view">
+                                        <i class="fas fa-eye me-2"></i>Vista Rápida
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-info p-3">
+                                <h5 class="product-name">Router Mikrotik hEX RB750Gr3</h5>
+                                <div class="product-rating mb-2">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span class="rating-text">(3.0)</span>
+                                </div>
+                                <p class="product-price">C$14,500 <small>+IVA</small></p>
+                                <p class="product-code">Código: 5173</p>
+                                <div class="product-actions">
+                                    
+                                    <button class="btn btn-primary btn-sm">
+                                        <i class="fas fa-cart-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Router 4 -->
+                    <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
+                        <div class="product-card animate-fade-in">
+                            <div class="product-badge">Popular</div>
+                            <div class="product-image">
+                                <img src="../fotos/routers/Cisco ISR 1100-4G.jpg" class="img-fluid" alt="Router MX7350">
+                                <div class="product-overlay">
+                                    <button class="btn btn-primary quick-view">
+                                        <i class="fas fa-eye me-2"></i>Vista Rápida
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-info p-3">
+                                <h5 class="product-name">Router Cisco ISR 1100-4G</h5>
+                                <div class="product-rating mb-2">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span class="rating-text">(3.0)</span>
+                                </div>
+                                <p class="product-price">C$7,000 <small>+IVA</small></p>
+                                <p class="product-code">Código: 4170</p>
+                                <div class="product-actions">
+                                    <button class="btn btn-primary btn-sm">
+                                        <i class="fas fa-cart-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Laptops Destacadas -->
+            <div class="category-section mb-5">
+                <div class="category-header d-flex justify-content-between align-items-center mb-4">
+                    <div>
+                        <h3 class="category-title" data-aos="fade-right" data-aos-duration="1000">Productos Populares</h3>
+                        <p class="category-subtitle" data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000">Equipos Certificados 100% originales</p>
+                    </div>
+                    <a href="tienda.html" class="btn btn-outline-primary" data-aos="fade-left" data-aos-duration="1000">Ver Todos los productos</a>
+                </div>
+                <div class="row g-4">
+                    <!-- Laptop 1 -->
+                    <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1000">
+                        <div class="product-card animate-fade-in">
+                            <div class="product-badge">Recomendado</div>
+                            <div class="product-image">
+                                <img src="../fotos/laptops/Dell Latitude 5440.jpg" class="img-fluid" alt="Laptop Dell">
+                                <div class="product-overlay">
+                                    <button class="btn btn-primary quick-view">
+                                        <i class="fas fa-eye me-2"></i>Vista Rápida
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-info p-3">
+                                <h5 class="product-name">Laptop Dell Latitude 5440</h5>
+                                <div class="product-rating mb-2">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span class="rating-text">(5.0)</span>
+                                </div>
+                                <p class="product-price">C$28,000 <small>+IVA</small></p>
+                                <p class="product-code">Código: 6790</p>
+                                <div class="product-actions">
+                                    <button class="btn btn-primary btn-sm">
+                                        <i class="fas fa-cart-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Laptop 2 -->
+                    <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+                        <div class="product-card animate-fade-in">
+                            <div class="product-badge">Nuevo</div>
+                            <div class="product-image">
+                                <img src="../fotos/laptops/HP EliteBook 840 G9.jpg" class="img-fluid" alt="Laptop Dell">
+                                <div class="product-overlay">
+                                    <button class="btn btn-primary quick-view">
+                                        <i class="fas fa-eye me-2"></i>Vista Rápida
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-info p-3">
+                                <h5 class="product-name">Laptop HP EliteBook 840 G9</h5>
+                                <div class="product-rating mb-2">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span class="rating-text">(4.5)</span>
+                                </div>
+                                <p class="product-price">C$32,000 <small>+IVA</small></p>
+                                <p class="product-code">Código: 6791</p>
+                                <div class="product-actions">
+
+                                    <button class="btn btn-primary btn-sm">
+                                        <i class="fas fa-cart-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Laptop 3 -->
+                    <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+                        <div class="product-card animate-fade-in">
+                            <div class="product-badge">Nuevo</div>
+                            <div class="product-image">
+                                <img src="../fotos/Swich/D-Link DGS-1100-24.jpg" class="img-fluid" alt="Laptop Dell">
+                                <div class="product-overlay">
+                                    <button class="btn btn-primary quick-view">
+                                        <i class="fas fa-eye me-2"></i>Vista Rápida
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-info p-3">
+                                <h5 class="product-name">Swicht D Link DGS-1100-24</h5>
+                                <div class="product-rating mb-2">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span class="rating-text">(2.0)</span>
+                                </div>
+                                <p class="product-price">C$9,119<small>+IVA</small></p>
+                                <p class="product-code">Código: 8479</p>
+                                <div class="product-actions">
+                                
+                                    <button class="btn btn-primary btn-sm">
+                                        <i class="fas fa-cart-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Laptop 4 -->
+                    <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
+                        <div class="product-card animate-fade-in">
+                            <div class="product-badge">Popular</div>
+                            <div class="product-image">
+                                <img src="../fotos/Swich/Cisco Catalyst 1000-8T-L.jpg" class="img-fluid" alt="Laptop Dell">
+                                <div class="product-overlay">
+                                    <button class="btn btn-primary quick-view">
+                                        <i class="fas fa-eye me-2"></i>Vista Rápida
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-info p-3">
+                                <h5 class="product-name">Cisco Catalyst 1000-8T</h5>
+                                <div class="product-rating mb-2">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span class="rating-text">(3.0)</span>
+                                </div>
+                                <p class="product-price">15,000 <small>+IVA</small></p>
+                                <p class="product-code">Código: 7621</p>
+                                <div class="product-actions">
+                                    </button>
+                                    <button class="btn btn-primary btn-sm">
+                                        <i class="fas fa-cart-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section Mejorado -->
+    <section class="cta-section py-5 bg-primary text-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h3 class="cta-title" data-aos="fade-right" data-aos-duration="1000">¿Necesitas una solución personalizada?</h3>
+                    <p class="cta-text" data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000">Nuestros expertos están listos para asesorarte y encontrar la mejor solución para tu negocio.</p>
+                </div>
+                <div class="col-lg-4 text-end">
+                    <a href="contactanos.html" class="btn btn-light btn-lg" data-aos="fade-left" data-aos-duration="1000">
+                        <i class="fas fa-headset me-2"></i>Contactar Asesor
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="footer-logo">
+                        <div class="logo">NOVA</div>
+                        <p class="logo-subtitle">Especialistas en Redes</p>
+                    </div>
+                    <p class="footer-text">Líderes en soluciones de conectividad y tecnología empresarial en Nicaragua.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Enlaces Rápidos</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="tienda.html">Tienda</a></li>
+                        <li><a href="contactanos.html">Contáctanos</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Categorías</h5>
+                    <ul class="footer-links">
+                        <li><a href="tienda.html">Routers</a></li>
+                        <li><a href="tienda.html">Switches</a></li>
+                        <li><a href="tienda.html">Access Points</a></li>
+                        <li><a href="tienda.html">Laptops</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 mb-4">
+                    <h5>Contacto</h5>
+                    <div class="contact-info">
+                    <p>Yacel Adolfo Mendoza Niño</p>
+                    <p>Justin Yoel Aleman Cardenas</p>
+                    <p>Bryan Alberto Baldizon Somarriba</p>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2024 NOVA - Tecnología de Redes. Todos los derechos reservados.</p>
+                </div>
+                <div class="col-md-6 text-end">
+                    <div class="footer-links-inline">
+                        <a href="#">Términos de Servicio</a>
+                        <a href="#">Política de Privacidad</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Vista Rápida para Index -->
+    <div class="modal fade" id="quickViewModalIndex" tabindex="-1" aria-labelledby="quickViewModalLabelIndex" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="quickViewModalLabelIndex">Vista Rápida</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img id="quickViewImageIndex" src="" class="img-fluid modal-product-image" alt="">
+                        </div>
+                        <div class="col-md-6">
+                            <h4 id="quickViewTitleIndex" class="mb-2"></h4>
+                            <p id="quickViewCodeIndex" class="text-muted mb-3"></p>
+                            <div class="price-highlight mb-3" id="quickViewPriceIndex"></div>
+                            <div class="product-rating mb-3" id="quickViewRatingIndex"></div>
+                            <p id="quickViewDescriptionIndex" class="mb-4">Producto destacado de NOVA - Especialistas en Redes</p>
+                            <div class="d-grid gap-2">
+                                <button class="btn btn-primary btn-lg">
+                                    <i class="fas fa-cart-plus me-2"></i>Agregar al Carrito
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Detalles del Producto para Index -->
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Library for Animations -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- JavaScript para Modales del Index -->
+    <script>
+        // Inicializar AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🚀 Inicializando modales para index.html...');
+            
+            // Inicializar botones de producto en el index
+            initializeIndexProductButtons();
+        });
+
+        function initializeIndexProductButtons() {
+            console.log('🔄 Inicializando botones de producto en index...');
+            
+            // Usar event delegation para manejar los botones
+            document.addEventListener('click', function(e) {
+                // Vista rápida en index
+                if (e.target.closest('.quick-view')) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    console.log('👁️ Vista rápida clickeada en index');
+                    const productCard = e.target.closest('.product-card');
+                    if (productCard) {
+                        showQuickViewModalIndex(productCard);
+                    }
+                }
+                
+                // Detalles en index
+                const detailsButton = e.target.closest('.details-btn');
+                if (detailsButton) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    console.log('📋 Detalles clickeado en index');
+                    const productCard = e.target.closest('.product-card');
+                    if (productCard) {
+                        showProductDetailsModalIndex(productCard);
+                    }
+                }
+            });
+        }
+
+        function showQuickViewModalIndex(productCard) {
+            try {
+                console.log('🔄 Cargando modal de vista rápida para index...');
+                
+                const productImage = productCard.querySelector('.product-image img').src;
+                const productName = productCard.querySelector('.product-name').textContent;
+                const productPrice = productCard.querySelector('.product-price').textContent;
+                const productCode = productCard.querySelector('.product-code').textContent;
+                const productRating = productCard.querySelector('.product-rating').innerHTML;
+                
+                console.log('📦 Datos del producto en index:', { productName, productCode, productPrice });
+                
+                // Actualizar modal de vista rápida del index
+                document.getElementById('quickViewImageIndex').src = productImage;
+                document.getElementById('quickViewTitleIndex').textContent = productName;
+                document.getElementById('quickViewCodeIndex').textContent = productCode;
+                document.getElementById('quickViewPriceIndex').textContent = productPrice;
+                document.getElementById('quickViewRatingIndex').innerHTML = productRating;
+                
+                const quickViewModal = new bootstrap.Modal(document.getElementById('quickViewModalIndex'));
+                quickViewModal.show();
+                
+                console.log('✅ Modal de vista rápida mostrado correctamente en index');
+            } catch (error) {
+                console.error('❌ Error mostrando modal de vista rápida en index:', error);
+            }
+        }
+
+        function showProductDetailsModalIndex(productCard) {
+            try {
+                console.log('🔄 Cargando modal de detalles para index...');
+                
+                const productImage = productCard.querySelector('.product-image img').src;
+                const productName = productCard.querySelector('.product-name').textContent;
+                const productPrice = productCard.querySelector('.product-price').textContent;
+                const productCode = productCard.querySelector('.product-code').textContent;
+                
+                console.log('📦 Datos del producto para detalles en index:', { productName, productCode, productPrice });
+                
+                // Actualizar modal de detalles del index
+                document.getElementById('detailsImageIndex').src = productImage;
+                document.getElementById('detailsTitleIndex').textContent = productName;
+                document.getElementById('detailsCodeIndex').textContent = productCode;
+                document.getElementById('detailsPriceIndex').textContent = productPrice;
+                
+                const detailsModal = new bootstrap.Modal(document.getElementById('productDetailsModalIndex'));
+                detailsModal.show();
+                
+                console.log('✅ Modal de detalles mostrado correctamente en index');
+            } catch (error) {
+                console.error('❌ Error mostrando modal de detalles en index:', error);
+            }
+        }
+
+        function showProductDetailsFromQuickView() {
+            // Cerrar modal de vista rápida y abrir el de detalles
+            const quickViewModal = bootstrap.Modal.getInstance(document.getElementById('quickViewModalIndex'));
+            quickViewModal.hide();
+            
+            // Usar un pequeño delay para asegurar la transición
+            setTimeout(() => {
+                const detailsModal = new bootstrap.Modal(document.getElementById('productDetailsModalIndex'));
+                detailsModal.show();
+            }, 300);
+        }
+    </script>
+</body>
+</html>

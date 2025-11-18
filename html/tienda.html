@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda - NOVA</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <!-- Header Superior -->
+    <header class="top-header py-2">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-4">
+                    <div class="logo-section d-flex align-items-center">
+                        <div class="logo me-2">NOVA</div>
+                        <span class="logo-subtitle">Especialistas en Redes</span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="store-info text-center">
+                        <small class="text-muted"><i class="fas fa-shipping-fast me-1"></i>Envíos a todo el país</small>
+                    </div>
+                </div>
+     <div class="col-md-4 text-end">
+    <div class="user-section">
+        <a href="mi-cuenta.html" class="user-link me-3">
+            <i class="fas fa-user me-1"></i>Mi cuenta
+        </a>
+        <a href="carrito.html" class="cart-link">
+            <i class="fas fa-shopping-cart me-1"></i>Carrito: C$<span id="cartTotal">0.00</span>
+        </a>
+    </div>
+</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navegación Principal -->
+    <nav class="main-nav navbar navbar-expand-lg">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav w-100 justify-content-between">
+                    <li class="nav-item"><a class="nav-link" href="index.html">INICIO</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="tienda.html">TIENDA</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contactanos.html">CONTACTANOS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">POLÍTICAS</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Tienda -->
+    <section class="catalog-hero py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="display-4 fw-bold mb-4 animate-fade-in">Tienda NOVA</h1>
+                    <p class="lead mb-4 animate-slide-up">Todos nuestros equipos de networking y tecnología en un solo lugar</p>
+                    
+                    <!-- Barra de búsqueda -->
+                    <div class="advanced-search animate-slide-up">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="input-group">
+                                    <input type="text" class="form-control form-control-lg" placeholder="Buscar routers, switches, access points, laptops...">
+                                    <button class="btn btn-primary btn-lg" type="button">
+                                        <i class="fas fa-search me-2"></i>Buscar
+                                    </button>
+                                </div>
+                                <div class="search-suggestions mt-2">
+                                    <small class="text-muted">Sugerencias: <span class="text-primary">Router Cisco</span>, <span class="text-primary">Switch HP</span>, <span class="text-primary">Laptop Dell</span></small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filtros y Categorías -->
+    <section class="filters-section py-4 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="filter-buttons">
+                        <button class="btn btn-outline-primary btn-sm active">Todos</button>
+                        <button class="btn btn-outline-primary btn-sm">Routers</button>
+                        <button class="btn btn-outline-primary btn-sm">Switches</button>
+                        <button class="btn btn-outline-primary btn-sm">Access Points</button>
+                        <button class="btn btn-outline-primary btn-sm">Laptops</button>
+                    </div>
+                </div>
+                <div class="col-md-6 text-end">
+                    <div class="sort-options">
+                        <span class="me-2">Ordenar por:</span>
+                        <select class="form-select form-select-sm d-inline-block w-auto">
+                            <option selected>Recomendados</option>
+                            <option>Precio: Menor a Mayor</option>
+                            <option>Precio: Mayor a Menor</option>
+                            <option>Más Vendidos</option>
+                            <option>Nuevos</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contenido Principal del Catálogo -->
+    <section class="catalog-main py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Sidebar de Filtros -->
+                <div class="col-lg-3">
+                    <div class="filter-sidebar">
+                        <!-- Filtro por Categoría -->
+                        <div class="filter-group">
+                            <h5 class="filter-title">Categorías</h5>
+                            <div class="filter-options">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="cat-routers" checked>
+                                    <label class="form-check-label" for="cat-routers">
+                                        Routers <span class="badge bg-primary">2</span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="cat-switches" checked>
+                                    <label class="form-check-label" for="cat-switches">
+                                        Switches <span class="badge bg-primary">5</span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="cat-accesspoints">
+                                    <label class="form-check-label" for="cat-accesspoints">
+                                        Access Points <span class="badge bg-primary">0</span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="cat-laptops">
+                                    <label class="form-check-label" for="cat-laptops">
+                                        Laptops <span class="badge bg-primary">0</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Filtro por Marca -->
+                        <div class="filter-group">
+                            <h5 class="filter-title">Marcas</h5>
+                            <div class="filter-options">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="brand-cisco">
+                                    <label class="form-check-label" for="brand-cisco">Cisco</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="brand-hp">
+                                    <label class="form-check-label" for="brand-hp">HP</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="brand-dell">
+                                    <label class="form-check-label" for="brand-dell">Dell</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="brand-ubiquiti">
+                                    <label class="form-check-label" for="brand-ubiquiti">Ubiquiti</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="brand-linksys">
+                                    <label class="form-check-label" for="brand-linksys">Linksys</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Filtro por Precio -->
+                        <div class="filter-group">
+                            <h5 class="filter-title">Rango de Precio</h5>
+                            <div class="price-filter">
+                                <div class="price-inputs d-flex justify-content-between mb-2">
+                                    <input type="number" class="form-control form-control-sm" placeholder="Mín" value="0">
+                                    <span class="mx-2">-</span>
+                                    <input type="number" class="form-control form-control-sm" placeholder="Máx" value="50000">
+                                </div>
+                                <button class="btn btn-primary btn-sm w-100">Aplicar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Grid de Productos -->
+                <div class="col-lg-9">
+                    <!-- Info de Resultados -->
+                    <div class="results-info mb-4">
+                        <div class="row align-items-center">
+                            <div class="col-md-6">
+                                <p class="mb-0">Mostrando <strong>6</strong> de <strong>8</strong> productos</p>
+                            </div>
+                            <div class="col-md-6 text-end">
+                                <div class="view-options">
+                                    <button class="btn btn-outline-primary btn-sm active">
+                                        <i class="fas fa-th"></i>
+                                    </button>
+                                    <button class="btn btn-outline-primary btn-sm">
+                                        <i class="fas fa-list"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Grid de Productos -->
+                    <div class="products-grid">
+                        <div class="row g-4">
+                            <!-- Producto 1 -->
+                            <div class="col-xl-4 col-md-6">
+                                <div class="product-card catalog-view">
+                                    <div class="product-badge">Economico</div>
+                                    <div class="product-image">
+                                        <img src="../fotos/Swich/HP OfficeConnect 1920S 24G.jpg" class="img-fluid" alt="HP OfficeConnect 1920S 24G">
+                                        <div class="product-overlay">
+                                            <button class="btn btn-primary quick-view">
+                                                <i class="fas fa-eye me-2"></i>Vista Rápida
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="product-info p-3">
+                                        <div class="product-meta">
+                                            <span class="product-category">Swicht</span>
+                                            <span class="product-stock in-stock">En stock</span>
+                                        </div>
+                                        <h5 class="product-name">HP OfficeConnect 1920S 24G</h5>
+                                        <div class="product-rating mb-2">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <span class="rating-text">(3.0)</span>
+                                        </div>
+                                        <p class="product-description">Swich HP OfficeConnect 1920</p>
+                                        <p class="product-price">C$8,700 <small>+IVA</small></p>
+                                        <p class="product-code">Código: 8505</p>
+                                        <div class="product-specs">
+                                            <span class="spec-badge">Rack 1U</span>
+                                            <span class="spec-badge">24 Puertos</span>
+                                            <span class="spec-badge">Gestionable</span>
+                                        </div>
+                                        <div class="product-actions">
+                                            <button class="btn btn-outline-primary btn-sm me-2">
+                                                <i class="fas fa-info-circle me-1"></i>Detalles
+                                            </button>
+                                            <button class="btn btn-primary btn-sm">
+                                                <i class="fas fa-cart-plus"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Producto 2 -->
+                            <div class="col-xl-4 col-md-6">
+                                <div class="product-card catalog-view">
+                                    <div class="product-badge">Nuevo</div>
+                                    <div class="product-image">
+                                        <img src="../fotos/Swich/Cisco Catalyst 1000-8T-L.jpg" class="img-fluid" alt="Cisco Catalyst 1000-8T-L">
+                                        <div class="product-overlay">
+                                            <button class="btn btn-primary quick-view">
+                                                <i class="fas fa-eye me-2"></i>Vista Rápida
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="product-info p-3">
+                                        <div class="product-meta">
+                                            <span class="product-category">Swicht</span>
+                                            <span class="product-stock in-stock">En stock</span>
+                                        </div>
+                                        <h5 class="product-name">Cisco Catalyst 1000-8T-L</h5>
+                                        <div class="product-rating mb-2">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <span class="rating-text">(3.0)</span>
+                                        </div>
+                                        <p class="product-description">Switch gestionable Nivel 2 Gigabit Ethernet RJ-45</p>
+                                        <p class="product-price">C$15,000 <small>+IVA</small></p>
+                                        <p class="product-code">Código: 7621</p>
+                                        <div class="product-specs">
+                                            <span class="spec-badge">8 Puertos</span>
+                                            <span class="spec-badge">Gigabit</span>
+                                            <span class="spec-badge">NO PoE+</span>
+                                        </div>
+                                        <div class="product-actions">
+                                            <button class="btn btn-outline-primary btn-sm me-2">
+                                                <i class="fas fa-info-circle me-1"></i>Detalles
+                                            </button>
+                                            <button class="btn btn-primary btn-sm">
+                                                <i class="fas fa-cart-plus"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Producto 3 -->
+                            <div class="col-xl-4 col-md-6">
+                                <div class="product-card catalog-view">
+                                    <div class="product-badge">Nuevo</div>
+                                    <div class="product-image">
+                                        <img src="../fotos/Swich/TP-Link TL-SG1024DE.jpg" class="img-fluid" alt="TP-Link TL-SG1024DE">
+                                        <div class="product-overlay">
+                                            <button class="btn btn-primary quick-view">
+                                                <i class="fas fa-eye me-2"></i>Vista Rápida
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="product-info p-3">
+                                        <div class="product-meta">
+                                            <span class="product-category">Swicht</span>
+                                            <span class="product-stock in-stock">En stock</span>
+                                        </div>
+                                        <h5 class="product-name">TP-Link TL-SG1024DE</h5>
+                                        <div class="product-rating mb-2">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <span class="rating-text">(4.8)</span>
+                                        </div>
+                                        <p class="product-description">Swicht TP-Link TL-SG1024DE</p>
+                                        <p class="product-price">C$4,800 <small>+IVA</small></p>
+                                        <p class="product-code">Código: 8845</p>
+                                        <div class="product-specs">
+                                            <span class="spec-badge">24 Puertos</span>
+                                            <span class="spec-badge">Gigabit</span>
+                                            <span class="spec-badge">Gestionable</span>
+                                            <span class="spec-badge">Poe</span>
+                                        </div>
+                                        <div class="product-actions">
+                                            <button class="btn btn-outline-primary btn-sm me-2">
+                                                <i class="fas fa-info-circle me-1"></i>Detalles
+                                            </button>
+                                            <button class="btn btn-primary btn-sm">
+                                                <i class="fas fa-cart-plus"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Producto 4 -->
+                            <div class="col-xl-4 col-md-6">
+                                <div class="product-card catalog-view">
+                                    <div class="product-badge">Nuevo</div>
+                                    <div class="product-image">
+                                        <img src="../fotos/Swich/Netgear GS324TP 24-Port.jpg" class="img-fluid" alt="Netgear GS324TP 24-Port">
+                                        <div class="product-overlay">
+                                            <button class="btn btn-primary quick-view">
+                                                <i class="fas fa-eye me-2"></i>Vista Rápida
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="product-info p-3">
+                                        <div class="product-meta">
+                                            <span class="product-category">Swicht</span>
+                                            <span class="product-stock in-stock">En stock</span>
+                                        </div>
+                                        <h5 class="product-name">Netgear GS324TP 24-Port</h5>
+                                        <div class="product-rating mb-2">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                            <span class="rating-text">(2.3)</span>
+                                        </div>
+                                        <p class="product-description">Netgear GS324TP 24-Port, Alimentación: 100-240V AC</p>
+                                        <p class="product-price">C$2,500 <small>+IVA</small></p>
+                                        <p class="product-code">Código: 9338</p>
+                                        <div class="product-specs">
+                                            <span class="spec-badge">24 Puertos</span>
+                                            <span class="spec-badge">Gestionable</span>
+                                            <span class="spec-badge">Poe+</span>
+                                        </div>
+                                        <div class="product-actions">
+                                            <button class="btn btn-outline-primary btn-sm me-2">
+                                                <i class="fas fa-info-circle me-1"></i>Detalles
+                                            </button>
+                                            <button class="btn btn-primary btn-sm">
+                                                <i class="fas fa-cart-plus"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Producto 5 -->
+                            <div class="col-xl-4 col-md-6">
+                                <div class="product-card catalog-view">
+                                    <div class="product-badge">Popular</div>
+                                    <div class="product-image">
+                                        <img src="../fotos/Swich/D-Link DGS-1100-24.jpg" class="img-fluid" alt="D-Link DGS-1100-24">
+                                        <div class="product-overlay">
+                                            <button class="btn btn-primary quick-view">
+                                                <i class="fas fa-eye me-2"></i>Vista Rápida
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="product-info p-3">
+                                        <div class="product-meta">
+                                            <span class="product-category">Swicht</span>
+                                            <span class="product-stock in-stock">En stock</span>
+                                        </div>
+                                        <h5 class="product-name">Swicht D Link DGS-1100-24</h5>
+                                        <div class="product-rating mb-2">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <span class="rating-text">(2.0)</span>
+                                        </div>
+                                        <p class="product-description">Swicht D Link DGS-1100-24,Tasa de Forwarding 35.7 Mpps, Normas: IEEE 802.3az</p>
+                                        <p class="product-price">C$9,119 <small>+IVA</small></p>
+                                        <p class="product-code">Código: 8479</p>
+                                        <div class="product-specs">
+                                            <span class="spec-badge">24 Puertos</span>
+                                            <span class="spec-badge">Gestionable</span>
+                                            <span class="spec-badge">Gigabit</span>
+                                        </div>
+                                        <div class="product-actions">
+                                            <button class="btn btn-outline-primary btn-sm me-2">
+                                                <i class="fas fa-info-circle me-1"></i>Detalles
+                                            </button>
+                                            <button class="btn btn-primary btn-sm">
+                                                <i class="fas fa-cart-plus"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Producto 6 -->
+                            <div class="col-xl-4 col-md-6">
+                                <div class="product-card catalog-view">
+                                    <div class="product-badge">Nuevo</div>
+                                    <div class="product-image">
+                                        <img src="../fotos/routers/Cisco ISR 1100-4G.jpg" class="img-fluid" alt="Cisco ISR 1100-4G">
+                                        <div class="product-overlay">
+                                            <button class="btn btn-primary quick-view">
+                                                <i class="fas fa-eye me-2"></i>Vista Rápida
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="product-info p-3">
+                                        <div class="product-meta">
+                                            <span class="product-category">Routers</span>
+                                            <span class="product-stock in-stock">En stock</span>
+                                        </div>
+                                        <h5 class="product-name">Router Cisco ISR 1100-4G</h5>
+                                        <div class="product-rating mb-2">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <span class="rating-text">(3.0)</span>
+                                        </div>
+                                        <p class="product-description">Router Cisco ISR 1100, hasta 200 Mb velocidad Wan, Firewall State full,Características Enterprise, SD-WAN Ready</p>
+                                        <p class="product-price">C$7,000 <small>+IVA</small></p>
+                                        <p class="product-code">Código: 4173</p>
+                                        <div class="product-specs">
+                                            <span class="spec-badge">4 Puertos</span>
+                                            <span class="spec-badge">Gigabit</span>
+                                            <span class="spec-badge">VPN Ipsec</span>
+                                        </div>
+                                        <div class="product-actions">
+                                            <button class="btn btn-outline-primary btn-sm me-2">
+                                                <i class="fas fa-info-circle me-1"></i>Detalles
+                                            </button>
+                                            <button class="btn btn-primary btn-sm">
+                                                <i class="fas fa-cart-plus"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Producto 7 -->
+                            <div class="col-xl-4 col-md-6">
+                                <div class="product-card catalog-view">
+                                    <div class="product-badge">Descuento</div>
+                                    <div class="product-image">
+                                        <img src="../fotos/routers/Mikrotik hEX RB750Gr3.jpg" class="img-fluid" alt="Mikrotik hEX RB750Gr3">
+                                        <div class="product-overlay">
+                                            <button class="btn btn-primary quick-view">
+                                                <i class="fas fa-eye me-2"></i>Vista Rápida
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="product-info p-3">
+                                        <div class="product-meta">
+                                            <span class="product-category">Routers</span>
+                                            <span class="product-stock in-stock">En stock</span>
+                                        </div>
+                                        <h5 class="product-name">Router Mikrotik hEX RB750Gr3</h5>
+                                        <div class="product-rating mb-2">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <span class="rating-text">(3.0)</span>
+                                        </div>
+                                        <p class="product-description">Router Mikrotik hEX RB750Gr3,256 MB RAM,10W máximo</p>
+                                        <p class="product-price">C$14,500 <small>+IVA</small></p>
+                                        <p class="product-code">Código: 5173</p>
+                                        <div class="product-specs">
+                                            <span class="spec-badge">5 Puertos</span>
+                                            <span class="spec-badge">Gigabit</span>
+                                            <span class="spec-badge">VPN Ipsec</span>
+                                        </div>
+                                        <div class="product-actions">
+                                            <button class="btn btn-outline-primary btn-sm me-2">
+                                                <i class="fas fa-info-circle me-1"></i>Detalles
+                                            </button>
+                                            <button class="btn btn-primary btn-sm">
+                                                <i class="fas fa-cart-plus"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Producto 8 -->
+                            <div class="col-xl-4 col-md-6">
+                                <div class="product-card catalog-view">
+                                    <div class="product-badge">Nuevo</div>
+                                    <div class="product-image">
+                                        <img src="../fotos/routers/TP-Link ER605.jpg" class="img-fluid" alt="TP-Link ER605">
+                                        <div class="product-overlay">
+                                            <button class="btn btn-primary quick-view">
+                                                <i class="fas fa-eye me-2"></i>Vista Rápida
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="product-info p-3">
+                                        <div class="product-meta">
+                                            <span class="product-category">Routers</span>
+                                            <span class="product-stock in-stock">En stock</span>
+                                        </div>
+                                        <h5 class="product-name">Router TP-Link ER605</h5>
+                                        <div class="product-rating mb-2">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <span class="rating-text">(4.0)</span>
+                                        </div>
+                                        <p class="product-description">Router TP-Link ER605 WAN/LAN, 900 Mbps,SPI Firewall</p>
+                                        <p class="product-price">C$4,800 <small>+IVA</small></p>
+                                        <p class="product-code">Código: 4175</p>
+                                        <div class="product-specs">
+                                            <span class="spec-badge">5 Puertos</span>
+                                            <span class="spec-badge">Gigabit</span>
+                                            <span class="spec-badge">Gestion Web</span>
+                                        </div>
+                                        <div class="product-actions">
+                                            <button class="btn btn-outline-primary btn-sm me-2">
+                                                <i class="fas fa-info-circle me-1"></i>Detalles
+                                            </button>
+                                            <button class="btn btn-primary btn-sm">
+                                                <i class="fas fa-cart-plus"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Producto 9 -->
+<div class="col-xl-4 col-md-6">
+    <div class="product-card catalog-view">
+        <div class="product-badge">Descuento</div>
+        <div class="product-image">
+            <img src="../fotos/routers/Ubiquiti EdgeRouter 4.jpg" class="img-fluid" alt="Cisco Meraki MX67">
+            <div class="product-overlay">
+                <button class="btn btn-primary quick-view">
+                    <i class="fas fa-eye me-2"></i>Vista Rápida
+                </button>
+            </div>
+        </div>
+        <div class="product-info p-3">
+            <div class="product-meta">
+                <span class="product-category">Routers</span>
+                <span class="product-stock in-stock">En stock</span>
+            </div>
+            <h5 class="product-name">Ubiquiti EdgeRouter </h5>
+            <div class="product-rating mb-2">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <span class="rating-text">(4.0)</span>
+            </div>
+            <p class="product-description">Router Ubiquiti EdgeRouter,Dual-Core 1 GHz,1 GB DDR3 RAM </p>
+            <p class="product-price">C$1,200 <small>+IVA</small></p>
+            <p class="product-code">6789</p>
+            <div class="product-specs">
+                <span class="spec-badge">3 Puertos</span>
+                <span class="spec-badge">Gigabit</span>
+                <span class="spec-badge">Managed EdgeOs</span>
+                <span class="spec-badge">3.4 Mbps</span>
+                <span class="spec-badge">1 Puerto SFP</span>
+            </div>
+            <div class="product-actions">
+                <button class="btn btn-outline-primary btn-sm me-2">
+                    <i class="fas fa-info-circle me-1"></i>Detalles
+                </button>
+                <button class="btn btn-primary btn-sm">
+                    <i class="fas fa-cart-plus"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Producto 10 - Router Nuevo -->
+<div class="col-xl-4 col-md-6">
+    <div class="product-card catalog-view">
+        <div class="product-badge">Recomendado</div>
+        <div class="product-image">
+            <img src="../fotos/routers/Fortinet FortiGate 40F.jpg" class="img-fluid" alt="Cisco Meraki MX67">
+            <div class="product-overlay">
+                <button class="btn btn-primary quick-view">
+                    <i class="fas fa-eye me-2"></i>Vista Rápida
+                </button>
+            </div>
+        </div>
+        <div class="product-info p-3">
+            <div class="product-meta">
+                <span class="product-category">Routers</span>
+                <span class="product-stock in-stock">En stock</span>
+            </div>
+            <h5 class="product-name">Fortinet FortiGate 40F</h5>
+            <div class="product-rating mb-2">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <span class="rating-text">(4.0)</span>
+            </div>
+            <p class="product-description">Router Fortinet FortiGate 40F,Licencia: FortiGuard Services,Gestión: FortiOS</p>
+            <p class="product-price">C$10,000 <small>+IVA</small></p>
+            <p class="product-code">Codigo 6790</p>
+            <div class="product-specs">
+                <span class="spec-badge">8 Puertos</span>
+                <span class="spec-badge">Gigabit</span>
+                <span class="spec-badge">800 Mbps</span>
+            </div>
+            <div class="product-actions">
+                <button class="btn btn-outline-primary btn-sm me-2">
+                    <i class="fas fa-info-circle me-1"></i>Detalles
+                </button>
+                <button class="btn btn-primary btn-sm">
+                    <i class="fas fa-cart-plus"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Producto 11 - Router Nuevo -->
+<div class="col-xl-4 col-md-6">
+    <div class="product-card catalog-view">
+        <div class="product-badge">Nuevo</div>
+        <div class="product-image">
+            <img src="../fotos/laptops/Dell Latitude 5440.jpg" class="img-fluid" alt="Cisco Meraki MX67">
+            <div class="product-overlay">
+                <button class="btn btn-primary quick-view">
+                    <i class="fas fa-eye me-2"></i>Vista Rápida
+                </button>
+            </div>
+        </div>
+        <div class="product-info p-3">
+            <div class="product-meta">
+                <span class="product-category">Laptops</span>
+                <span class="product-stock in-stock">En stock</span>
+            </div>
+            <h5 class="product-name">Laptop Dell Latitude 5440</h5>
+            <div class="product-rating mb-2">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <span class="rating-text">(5.0)</span>
+            </div>
+            <p class="product-description">Laptop Dell Latitude 5440,Pantalla: 14" FHD (1920x1080),Wi-Fi 6, Bluetooth 5.2,2x USB-C, 2x USB-A, HDMI</p>
+            <p class="product-price">C$28,000 <small>+IVA</small></p>
+            <p class="product-code">6790</p>
+            <div class="product-specs">
+                <span class="spec-badge">8 GB RAM</span>
+                <span class="spec-badge">256 GB SDD NVMe</span>
+                <span class="spec-badge">Intel Core i5-1335U</span>
+            </div>
+            <div class="product-actions">
+                <button class="btn btn-outline-primary btn-sm me-2">
+                    <i class="fas fa-info-circle me-1"></i>Detalles
+                </button>
+                <button class="btn btn-primary btn-sm">
+                    <i class="fas fa-cart-plus"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Producto 12 -->
+<div class="col-xl-4 col-md-6">
+    <div class="product-card catalog-view">
+        <div class="product-badge">Nuevo</div>
+        <div class="product-image">
+            <img src="../fotos/laptops/HP EliteBook 840 G9.jpg" class="img-fluid" alt="Cisco Meraki MX67">
+            <div class="product-overlay">
+                <button class="btn btn-primary quick-view">
+                    <i class="fas fa-eye me-2"></i>Vista Rápida
+                </button>
+            </div>
+        </div>
+        <div class="product-info p-3">
+            <div class="product-meta">
+                <span class="product-category">Laptops</span>
+                <span class="product-stock in-stock">En stock</span>
+            </div>
+            <h5 class="product-name">Laptop HP EliteBook 840 G9</h5>
+            <div class="product-rating mb-2">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <span class="rating-text">(4.5)</span>
+            </div>
+            <p class="product-description">HP EliteBook 840 G9,14" FHD IPS,Lector de huellas, IR Camera,Wi-Fi 6E, Bluetooth 5.3</p>
+            <p class="product-price">C$32,000 <small>+IVA</small></p>
+            <p class="product-code">6791</p>
+            <div class="product-specs">
+                <span class="spec-badge">16 GB DDR4</span>
+                <span class="spec-badge">512 GB SSD</span>
+                <span class="spec-badge">Intel Core i5-1235U</span>
+            </div>
+            <div class="product-actions">
+                <button class="btn btn-outline-primary btn-sm me-2">
+                    <i class="fas fa-info-circle me-1"></i>Detalles
+                </button>
+                <button class="btn btn-primary btn-sm">
+                    <i class="fas fa-cart-plus"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-xl-4 col-md-6">
+    <div class="product-card catalog-view">
+        <div class="product-badge">ofertas</div>
+        <div class="product-image">
+            <img src="../fotos/Ap/Cisco Meraki MR46.jpg" class="img-fluid" alt="Cisco Meraki MX67">
+            <div class="product-overlay">
+                <button class="btn btn-primary quick-view">
+                    <i class="fas fa-eye me-2"></i>Vista Rápida
+                </button>
+            </div>
+        </div>
+        <div class="product-info p-3">
+            <div class="product-meta">
+                <span class="product-category">Access Points</span>
+                <span class="product-stock in-stock">En stock</span>
+            </div>
+            <h5 class="product-name">Cisco Meraki MR46</h5>
+            <div class="product-rating mb-2">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <span class="rating-text">(4.7)</span>
+            </div>
+            <p class="product-description">Cisco Meraki MR46,Wi-Fi 6 AX3600,Hasta 512 simultáneos</p>
+            <p class="product-price">C$6,700 <small>+IVA</small></p>
+            <p class="product-code">6793</p>
+            <div class="product-specs">
+                <span class="spec-badge">PoE </span>
+                <span class="spec-badge">2.4 Gbps (5 GHz) + 600 Mbps (2.4 GHz)</span>
+                <span class="spec-badge">Meraki Cloud</span>
+            </div>
+            <div class="product-actions">
+                <button class="btn btn-outline-primary btn-sm me-2">
+                    <i class="fas fa-info-circle me-1"></i>Detalles
+                </button>
+                <button class="btn btn-primary btn-sm">
+                    <i class="fas fa-cart-plus"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Vista Rápida -->
+    <div class="modal fade" id="quickViewModal" tabindex="-1" aria-labelledby="quickViewModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="quickViewModalLabel">Vista Rápida</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img id="quickViewImage" src="" class="img-fluid modal-product-image" alt="">
+                        </div>
+                        <div class="col-md-6">
+                            <h4 id="quickViewTitle" class="mb-2"></h4>
+                            <p id="quickViewCode" class="text-muted mb-3"></p>
+                            <div class="price-highlight mb-3" id="quickViewPrice"></div>
+                            <div class="product-rating mb-3" id="quickViewRating"></div>
+                            <p id="quickViewDescription" class="mb-4"></p>
+                            <div class="d-grid gap-2">
+                                <button class="btn btn-primary btn-lg">
+                                    <i class="fas fa-cart-plus me-2"></i>Agregar al Carrito
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Detalles del Producto -->
+    <div class="modal fade" id="productDetailsModal" tabindex="-1" aria-labelledby="productDetailsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productDetailsModalLabel">Detalles del Producto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img id="detailsImage" src="" class="img-fluid modal-product-image" alt="">
+                        </div>
+                        <div class="col-md-6">
+                            <h2 id="detailsTitle" class="mb-3"></h2>
+                            <p id="detailsCode" class="text-muted mb-4"></p>
+                            
+                            <div class="price-highlight mb-4" id="detailsPrice"></div>
+                            <p class="text-muted mb-4">Precio incluye soporte técnico</p>
+                            
+                            <h5 class="mb-3">Descripción</h5>
+                            <p id="detailsDescription" class="mb-4"></p>
+                            
+                            <h5 class="mb-3">Especificaciones</h5>
+                            <div class="specs-grid" id="detailsSpecs"></div>
+                            
+                            <div class="border-top pt-4 mt-4">
+                                <h6 class="mb-3">Envío y garantía</h6>
+                                <ul class="list-unstyled">
+                                    <li><i class="fas fa-shipping-fast text-primary me-2"></i>Envío gratis</li>
+                                    <li><i class="fas fa-shield-alt text-primary me-2"></i>Equipos Certificados</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="d-grid mt-4">
+                                <button class="btn btn-primary btn-lg py-3">
+                                    <i class="fas fa-cart-plus me-2"></i>Agregar al carrito
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Newsletter -->
+    <section class="newsletter-section py-5 bg-primary text-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h3 class="newsletter-title">¿Buscas un equipo específico?</h3>
+                    <p class="newsletter-text">Suscríbete y recibe notificaciones de nuevos productos y ofertas especiales</p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="newsletter-form">
+                        <div class="input-group">
+                            <input type="email" class="form-control form-control-lg" placeholder="tu@email.com">
+                            <button class="btn btn-light btn-lg" type="button">
+                                <i class="fas fa-paper-plane me-2"></i>Suscribirse
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="footer-logo">
+                        <div class="logo">NOVA</div>
+                        <p class="logo-subtitle">Especialistas en Redes</p>
+                    </div>
+                    <p class="footer-text">Líderes en soluciones de conectividad y tecnología empresarial en Nicaragua.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Enlaces Rápidos</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="tienda.html">Tienda</a></li>
+                        <li><a href="contactanos.html">Contáctanos</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Categorías</h5>
+                    <ul class="footer-links">
+                        <li><a href="tienda.html">Routers</a></li>
+                        <li><a href="tienda.html">Switches</a></li>
+                        <li><a href="tienda.html">Access Points</a></li>
+                        <li><a href="tienda.html">Laptops</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 mb-4">
+                    <h5>Contacto</h5>
+                    <div class="contact-info">
+                    <p>Yacel Adolfo Mendoza Niño</p>
+                    <p>Justin Yoel Aleman Cardenas</p>
+                    <p>Bryan Alberto Baldizon Somarriba</p>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2025 NOVA - Tecnología de Redes. Todos los derechos reservados.</p>
+                </div>
+                <div class="col-md-6 text-end">
+                    <div class="footer-links-inline">
+                        <a href="#">Términos de Servicio</a>
+                        <a href="#">Política de Privacidad</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/script.js"></script>
+<script>
+// --- Inicializar carrito ---
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+// --- Actualizar total en el header ---
+function updateCartTotal() {
+    const total = cart.reduce((sum, item) => sum + item.precio, 0);
+    const cartTotalHeader = document.getElementById("cartTotalHeader");
+    if(cartTotalHeader) cartTotalHeader.textContent = total.toFixed(2);
+}
+
+// --- Agregar producto al carrito ---
+function addToCart(nombre, precio) {
+    cart.push({ nombre, precio });
+    localStorage.setItem("cart", JSON.stringify(cart));
+    updateCartTotal();
+    renderCartTable();
+}
+
+// --- Eliminar producto ---
+function removeFromCart(index) {
+    cart.splice(index, 1);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    updateCartTotal();
+    renderCartTable();
+}
+
+// --- Mostrar carrito en tabla ---
+function renderCartTable() {
+    const tableBody = document.getElementById("cartTableBody");
+    if(!tableBody) return;
+
+    tableBody.innerHTML = "";
+    cart.forEach((item, index) => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+            <td>${item.nombre}</td>
+            <td>C$ ${item.precio.toFixed(2)}</td>
+            <td><button class="btn btn-danger btn-sm" onclick="removeFromCart(${index})">Eliminar</button></td>
+        `;
+        tableBody.appendChild(row);
+    });
+
+    const totalRow = document.getElementById("cartTotalRow");
+    if(totalRow) {
+        totalRow.textContent = "C$ " + cart.reduce((sum, item) => sum + item.precio, 0).toFixed(2);
+    }
+}
+
+// --- Inicializar al cargar ---
+document.addEventListener("DOMContentLoaded", () => {
+    updateCartTotal();
+    renderCartTable();
+});
+</script>
+
+</body>
+</html>
